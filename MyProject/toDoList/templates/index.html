@@ -20,9 +20,14 @@
                 {% for task in tasks %}
                         <tr><td>
                             <div class="row each_task">
-                                <div class="col-sm-8 "><span class="align-baseline">{{task.task}}</span></div>
-                                <div class="col-sm-2"><input type="submit" value="Remove" class="btn btn-danger btn-sm"></div>
-                                <div class="col-sm-2"><input type="submit" value="Done" class="btn btn-success btn-sm"></div>
+                                <div class="col-sm-9"><span class="align-baseline">{{task.task}}</span></div>
+                                <div class="col-sm-2">
+                                    <form action= "delete" method="Post">
+                                        {% csrf_token %}
+                                        <input type="hidden" value={{task.id}} name="id">
+                                        <input type="submit" value="Remove" class="btn btn-danger btn-sm">
+                                    </form>
+                                </div>
                             </div><br>
                         </td></tr>
                 {% endfor %}
