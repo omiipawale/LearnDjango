@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+        *{
+            text-align:center;
+        }
+        .ToDoApp{
+            width: 600px;
+            border : 1px solid lightgreen;
+            padding:10px;
+            margin: auto;
+            margin-top:50px;
+            border-radius:10px;
+            background-color: skyblue;
+            height:700px;
+        }
+        .main_heading{
+            text-style:bold;
+        }
+        input{
+            margin:5px;
+        }
+        table{
+            width:100%;
+            text-align : center;
+        }
+        td{
+            margin:1px;
+        }
+        .each_task{
+            width : 90%;
+            margin:auto;
+            ex-align:center;
+            border : 1px solid gray;
+            border-radius:5px;
+            background-color: lightgreen;
+        }
+        .scrollme {
+            overflow-y: auto;
+        }
+
+    </style>
+    <title>Learn Django</title>
+</head>
+<body>
+    {% block body %}{% endblock %}
+</body>
+</html>

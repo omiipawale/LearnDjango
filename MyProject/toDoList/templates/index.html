@@ -1,0 +1,33 @@
+{% extends 'root.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="ToDoApp">
+        <div class="main_heading">
+            <h2>Add new task</h2>
+        <div>
+        <form  action="submit" method='POST'> 
+            {% csrf_token %}
+            <div class="input-group mb-3">
+                <input type="text" name = "taskname" class="form-control" placeholder="New TaskName" aria-label="New TaskName" aria-describedby="basic-addon2">
+            </div>
+            <input type="submit" class="btn btn-success" value="Add New Task">
+        </form>
+        <div class="main_heading">
+            <h2>Today's Tasks</h2>
+        <div>
+            <table>
+                {% for task in tasks %}
+                        <tr><td>
+                            <div class="row each_task">
+                                <div class="col-sm-8 "><span class="align-baseline">{{task.task}}</span></div>
+                                <div class="col-sm-2"><input type="submit" value="Remove" class="btn btn-danger btn-sm"></div>
+                                <div class="col-sm-2"><input type="submit" value="Done" class="btn btn-success btn-sm"></div>
+                            </div><br>
+                        </td></tr>
+                {% endfor %}
+            </table>  
+    </div>
+</div>
+
+{% endblock %}
