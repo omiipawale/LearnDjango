@@ -3,5 +3,4 @@ Lib
 scripts
 venv
 */__pycache__
-*.py
 *.pyc
